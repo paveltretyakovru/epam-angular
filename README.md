@@ -1,12 +1,19 @@
-# Webpack angular polette
+# Studing Angular 2
 ---
 
-[Angular.io webpack instruction](https://angular.io/docs/ts/latest/guide/webpack.html) package with fixing tests problem:
+## Install
+```
+$ npm install
+```
 
-> Uncaught SyntaxError: In strict mode code, functions can only be declared at top level or immediately within another function.
+## Runing
+```
+# Develop
+$ npm start
 
-Problem head:
-> Strict mode syntax error when running @angular/compiler 2.3.0 in PhantomJS
+# Tests
+$ npm tests
 
-* [Fixing instruction](https://github.com/tsvetomir/phantomjs-angular-2.3/blob/master/package.json)
-* [Problem issue](https://github.com/angular/angular/issues/13301)
+# Build
+$ npm run build
+```
