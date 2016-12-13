@@ -1,13 +1,18 @@
 import { TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 import { RouterTestingModule } from '@angular/router/testing';
 
+// Components
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses/courses.component'
+import { CoursesComponent } from './courses/courses.component';
 
 describe('App', () => {
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [AppComponent]});
+    TestBed.configureTestingModule({
+      imports: [ StoreModule.provideStore({}) ],
+      declarations: [ AppComponent ],
+    });
   });
 
   it ('should work', () => {
