@@ -13,13 +13,13 @@ import { CoursesComponent } from './courses/courses.component';
 
 // Reducers
 import { appTitleReducer } from './app-title.reducer';
-import { appAuthReducer } from './app-auth.reducer';
+import { loginAuthReducer } from './login/login-auth.reducer';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.provideStore({ title: appTitleReducer, auth: appAuthReducer })
+    StoreModule.provideStore({title: appTitleReducer, auth: loginAuthReducer})
   ],
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent, CoursesComponent, LoginComponent ],

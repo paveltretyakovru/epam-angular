@@ -2,7 +2,7 @@ import { ActionReducer, Action } from '@ngrx/store';
 
 export const SET_AUTH = 'SET_AUTH';
 
-export const appAuthReducer: ActionReducer<boolean> =
+export const loginAuthReducer: ActionReducer<boolean> =
   (state: boolean = false, action: Action) => {
     switch(action.type) {
       case SET_AUTH:
