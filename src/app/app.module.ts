@@ -22,6 +22,6 @@ import { appAuthReducer } from './app-auth.reducer';
     StoreModule.provideStore({ title: appTitleReducer, auth: appAuthReducer })
   ],
   bootstrap: [ AppComponent ],
-  declarations: [ AppComponent, CoursesComponent ],
+  declarations: [ AppComponent, CoursesComponent, LoginComponent ],
 })
 export class AppModule { }
