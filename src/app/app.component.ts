@@ -5,7 +5,7 @@ import { SET_TITLE } from './app-title.reducer';
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
 
-interface AppState {
+export interface AppState {
   auth: boolean;
   title: string;
 }
@@ -19,7 +19,9 @@ export class AppComponent {
   auth: Observable<boolean>;
   title: Observable<string>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(
+    private store: Store<AppState>
+  ) {
     this.title = store.select('title');
     this.auth = store.select('auth');
 

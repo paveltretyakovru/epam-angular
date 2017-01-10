@@ -5,6 +5,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 // Routing
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './auth-guard.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { loginAuthReducer } from './login/login-auth.reducer';
     AppRoutingModule,
     StoreModule.provideStore({title: appTitleReducer, auth: loginAuthReducer})
   ],
+  providers: [ AuthGuard ],
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent, CoursesComponent, LoginComponent ],
 })
