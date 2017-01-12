@@ -1,11 +1,16 @@
 export class LoginService {
+  test() {
+    console.log('Test method in login service');
+  }
   login(login: string, password: string) {
-    return new Promise(function(resolve, reject) {
+    let promise = new Promise( function (resolve, reject) {
       if(login === 'q' && password == 'q') {
-        return resolve();
+        resolve('Login completed');
       } else {
-        return reject();
+        reject('Login falsed');
       }
     });
+
+    return promise;
   }
 }

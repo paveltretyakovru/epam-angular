@@ -1,7 +1,13 @@
-  <main class="container">
-    <nav class="breadcrumb">
-      <span class="breadcrumb-item active">{{ title | async }}</span>
-    </nav>
-    
-    <router-outlet></router-outlet>
+  <main style="background-color:#EEEEEE">
+
+    <div class="container">
+      <h2>{{ title | async }}</h2>
+
+      <router-outlet></router-outlet>
+    </div>
+
   </main>
+
+  <footer class="container">
+    Член приложение
+  </footer>

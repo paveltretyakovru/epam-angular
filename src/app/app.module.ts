@@ -17,6 +17,9 @@ import { CoursesComponent } from './courses/courses.component';
 import { appTitleReducer } from './app-title.reducer';
 import { loginAuthReducer } from './login/login-auth.reducer';
 
+// Services
+import { LoginService } from './login/login.service';
+
 @NgModule({
   imports: [
     FormsModule,
@@ -24,7 +27,7 @@ import { loginAuthReducer } from './login/login-auth.reducer';
     AppRoutingModule,
     StoreModule.provideStore({title: appTitleReducer, auth: loginAuthReducer})
   ],
-  providers: [ AuthGuard ],
+  providers: [ AuthGuard,  LoginService],
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent, CoursesComponent, LoginComponent ],
 })
