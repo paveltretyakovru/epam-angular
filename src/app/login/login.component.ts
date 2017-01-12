@@ -29,9 +29,11 @@ export class LoginComponent {
     console.log('Login method', this.user.login, this.user.password);
     this.loginService
       .login(this.user.login, this.user.password)
-      .then(function(value) {
-        console.log(value);
-      }, function(value) {
+      .then(
+        function(value) {
+          console.log(value);
+        },
+        function(value) {
         console.error(value);
       })
   }
