@@ -1,6 +1,7 @@
 // Libraries modules
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule }  from '@angular/platform-browser';
 
 // Routing
@@ -18,6 +19,7 @@ import { loginAuthReducer } from './login/login-auth.reducer';
 
 @NgModule({
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     StoreModule.provideStore({title: appTitleReducer, auth: loginAuthReducer})
