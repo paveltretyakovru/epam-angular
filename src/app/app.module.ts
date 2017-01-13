@@ -1,5 +1,6 @@
 // Libraries modules
 import { NgModule } from '@angular/core';
+import { HttpModule} from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule }  from '@angular/platform-browser';
@@ -22,6 +23,7 @@ import { LoginService } from './login/login.service';
 
 @NgModule({
   imports: [
+    HttpModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

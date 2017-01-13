@@ -1,26 +1,31 @@
-const http = require('http');
-const port = 3000;
+const express = require('express');
+const cors = require('cors');
+const notifier = require('node-notifier');
 
-const requestHandler = (req, res) => {
-  switch(req.url) {
-    case '/':
-      return res.end('Hello Nodejs server!');
+// ========================== Init express app =================================
+const app = express();
+// =============================================================================
 
-    case '/login':
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.write(JSON.stringify({test: 123, google: '.com'}));
+// ========================== Init app variables ===============================
+app.set('host', process.env.SERVER_HOST || 'localhost');
+app.set('port', process.env.PORT || 3000);
+app.set('frontHost', process.env.FRONT_HOST || 'http://localhost:8080');
+// =============================================================================
 
-    default:
-      return res.end('Hello Nodejs server!');
-  }
-}
+// ========================== Init express middlewares =========================
+app.use(cors({credentials: true, origin: app.get('frontHost')}));
+// =============================================================================
 
-const server = http.createServer(requestHandler);
-
-server.listen(port, err => {
-  if(err) {
-    return console.log('Something wrong', err);
-  }
-
-  console.log(`Server on port ${port}`);
+// ==================== Routes -================================================
+app.get('/login', function(req, res, next) {
+  console.log('Login route:');
+  return res.json({test: 123, google: '.com'});
 });
+// =============================================================================
+
+// ==================== INIT SERVER ===========================================
+app.listen(app.get('port'), app.get('host'), error => {
+  let mess = (error) ? error : `Server: ${app.get('host')}:${app.get('port')}/`
+  if (!error) notifier.notify(`${mess}`)
+})
+// ----------------------------------------------------------------------------
