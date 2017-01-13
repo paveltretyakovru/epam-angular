@@ -18,8 +18,18 @@ app.use(cors({credentials: true, origin: app.get('frontHost')}));
 
 // ==================== Routes -================================================
 app.get('/login', function(req, res, next) {
-  console.log('Login route:');
-  return res.json({test: 123, google: '.com'});
+  let login = req.query.login,
+      password = req.query.password;
+
+  console.log(`Login route with login: ${login}; password: ${password}`);
+
+  if(login === 'q' && password === 'q') {
+    return res.json({success: true});
+  } else {
+    res.status(422);
+    return res.json({ success: false });
+  }
+
 });
 // =============================================================================
 

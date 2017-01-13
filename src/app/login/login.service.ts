@@ -14,18 +14,6 @@ export class LoginService {
   }
   login(login: string, password: string) {
     let url: string = `${LOGIN_URL}?login=${login}&password=${password}`;
-
     return this.http.get(url).toPromise();
-
-    // let promise = new Promise( function (resolve, reject) {
-    //
-    //   if(login === 'q' && password == 'q') {
-    //     resolve('Login completed');
-    //   } else {
-    //     reject('Login falsed');
-    //   }
-    // });
-    //
-    // return promise;
   }
 }
