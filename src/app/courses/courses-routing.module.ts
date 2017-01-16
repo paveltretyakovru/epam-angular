@@ -2,25 +2,24 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from '../auth-guard.service';
-import CoursesComponent from './courses.component';
+import { CoursesComponent } from './courses.component';
+import CoursesListComponent from './courses-list/courses-list.component';
 import { CoursesCreateComponent } from './courses-create/courses-create.component';
 
 const coursesRoutes: Routes = [
   {
     path: 'courses',
-    component: CoursesComponent,
     canActivate: [AuthGuard],
+    component: CoursesComponent,
 
     children: [
       {
         path: '',
-
-        children: [
-          {
-            path: 'new',
-            component: CoursesCreateComponent,
-          }
-        ],
+        component: CoursesListComponent,
+      },
+      {
+        path: 'new',
+        component: CoursesCreateComponent,
       }
     ], // courses children
 

@@ -7,7 +7,7 @@ import { SET_TITLE } from '../app-title.reducer';
 @Component({
   templateUrl: './courses.component.html',
 })
-export default class CoursesComponent {
+export class CoursesComponent {
   constructor(
     private store: Store<AppState>
   ) {
