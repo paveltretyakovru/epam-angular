@@ -1,4 +1,5 @@
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 import { AppState } from '../app.component';
@@ -20,6 +21,7 @@ export class LoginComponent {
 
   constructor(
     private store: Store<AppState>,
+    private router: Router,
     private loginService: LoginService,
   ) {
 
@@ -31,7 +33,9 @@ export class LoginComponent {
       .login(this.user.login, this.user.password)
       .then(
         (value) => {
+          console.info('Success auth');
           this.store.dispatch({ type: SET_AUTH, payload: true });
+          this.router.navigate(['courses']);
         },
         (value) => {
           this.store.dispatch({ type: SET_AUTH, payload: false });

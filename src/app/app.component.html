@@ -1,13 +1,68 @@
-  <main style="background-color:#EEEEEE">
-
-    <div class="container">
-      <h2>{{ title | async }}</h2>
-
-      <router-outlet></router-outlet>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        aria-expanded="false"
+        data-target="#bs-example-navbar-collapse-1"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Chlen</a>
     </div>
 
-  </main>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
 
-  <footer class="container">
-    Член приложение
-  </footer>
+        <li
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact:true}"
+        >
+          <a href="#" [routerLink]="['/']">Main</a>
+        </li>
+
+        <li
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact:true}"
+        >
+          <a href="#" [routerLink]="['/courses']">Courses</a>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact:true}"
+        >
+          <a href="#" [routerLink]="['/login']">Login</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<main>
+
+  <div class="container card card-1">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h2>{{ title | async }}</h2>
+        <router-outlet></router-outlet>
+
+      </div><!-- /col-md-12 -->
+    </div><!-- /row -->
+  </div>
+
+</main>
+
+<footer class="container">
+  Chlen corp. &copy; 2017
+</footer>

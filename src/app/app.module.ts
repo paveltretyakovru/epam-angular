@@ -11,6 +11,7 @@ import { AuthGuard } from './auth-guard.service';
 
 // Components
 import { AppComponent } from './app.component';
+import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './courses/courses.component';
 
@@ -31,6 +32,11 @@ import { LoginService } from './login/login.service';
   ],
   providers: [ AuthGuard,  LoginService],
   bootstrap: [ AppComponent ],
-  declarations: [ AppComponent, CoursesComponent, LoginComponent ],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    IndexComponent,
+    CoursesComponent,
+  ],
 })
 export class AppModule { }
