@@ -5,9 +5,9 @@ import { AppState } from '../app.component';
 import { SET_TITLE } from '../app-title.reducer';
 
 @Component({
-  template: `Courses component`,
+  templateUrl: './courses.component.html',
 })
-export class CoursesComponent {
+export default class CoursesComponent {
   constructor(
     private store: Store<AppState>
   ) {

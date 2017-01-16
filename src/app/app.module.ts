@@ -13,7 +13,7 @@ import { AuthGuard } from './auth-guard.service';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
-import { CoursesComponent } from './courses/courses.component';
+import { CoursesModule } from './courses/courses.module';
 
 // Reducers
 import { appTitleReducer } from './app-title.reducer';
@@ -27,6 +27,7 @@ import { LoginService } from './login/login.service';
     HttpModule,
     FormsModule,
     BrowserModule,
+    CoursesModule,
     AppRoutingModule,
     StoreModule.provideStore({title: appTitleReducer, auth: loginAuthReducer})
   ],
@@ -36,7 +37,6 @@ import { LoginService } from './login/login.service';
     AppComponent,
     LoginComponent,
     IndexComponent,
-    CoursesComponent,
   ],
 })
 export class AppModule { }
